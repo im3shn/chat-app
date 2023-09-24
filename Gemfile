@@ -71,3 +71,13 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+gem "devise", "~> 4.9"
+
+gem "jquery-rails", "~> 4.6"
+
+gem "jquery-ui-rails", "~> 6.0"
+
+gem "sassc-rails", "~> 2.1"
+
+gem "bootstrap-sass", "~> 3.4"
