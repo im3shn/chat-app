@@ -3,5 +3,10 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root to: "home#index"
-  resources :conversations, only: [:create]
+  resources :conversations, only: [:create] do
+    member do
+      post :close
+    end
+    resources :messages, only: [:create]
+  end
 end
