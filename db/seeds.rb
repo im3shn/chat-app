@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-1.upto(5) do |i|
+1.upto(50) do |i|
   User.create(
     first_name: "user",
     last_name: "#{i}",

@@ -22,8 +22,16 @@ ul {
   padding-left: 0;
   list-style: none;
 }
+.users-list{
+  max-height: 300px;
+  overflow: auto;
+}
+.conversations-list{
+  max-height: 600px;
+  overflow: auto;
+}
 
-messages-list {
+.messages-list {
   max-height: 200px;
   overflow-y: auto;
   overflow-x: hidden;

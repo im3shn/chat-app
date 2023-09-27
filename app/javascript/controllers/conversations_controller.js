@@ -4,18 +4,12 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   connect() {
       console.log("connectes to convo controller");
-    $('.toggle-window').click(function(e){
-        console.log("touched");
-        e.preventDefault();
-        var panel = $(this).parent().parent();
-        var messages_list = panel.find('.messages-list');
-        panel.find('.panel-body').toggle();
-        panel.attr('class', 'panel panel-default');
-        console.log(vic);
-        if (panel.find('.panel-body').is(':visible')) {
-          var height = messages_list[0].scrollHeight;
-          messages_list.scrollTop(height);
-        }
-      });
+      $('#go-to-last').click(function (e){
+          var panel = $(this).parent().parent().parent().parent().parent();
+          var messages_list = panel.find('.messages-list');
+          console.log(messages_list[0]);
+          console.log(messages_list.prop("scrollHeight"));
+          messages_list.scrollTop(messages_list.prop("scrollHeight"));
+      })
   }
 }

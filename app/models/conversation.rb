@@ -21,4 +21,11 @@ class Conversation < ApplicationRecord
   def opposed_user(user)
     user == receiver ? sender : receiver
   end
+
+  def self.sent_messages(user, current_user)
+    Conversation.get(current_user.id,user.id).messages.where(user_id:current_user.id).count
+  end
+  def self.received_messages(user, current_user)
+    Conversation.get(1,5).messages.where(user_id:user.id).count
+  end
 end

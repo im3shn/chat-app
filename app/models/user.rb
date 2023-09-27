@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :messages
   has_many :conversations, foreign_key: :sender_id
+
+  def self.full_name(current_user="")
+    current_user.first_name + " " + current_user.last_name
+  end
 end
