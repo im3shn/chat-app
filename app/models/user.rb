@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :conversations, foreign_key: :sender_id
 
   def self.full_name(current_user="")
-    current_user.first_name + " " + current_user.last_name
+  	if current_user.present?
+	  current_user.first_name + " " + current_user.last_name
+	end
   end
 end
