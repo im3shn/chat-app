@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+
     session[:conversations] ||= []
     if params[:search] && params[:search][:search_email].present?
       @users = User.where("email LIKE ?", "%" + params[:search][:search_email] + "%")
@@ -10,4 +11,6 @@ class HomeController < ApplicationController
     puts session.to_hash
     puts @conversations
   end
+
+
 end

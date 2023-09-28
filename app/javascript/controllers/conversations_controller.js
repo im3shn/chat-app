@@ -16,6 +16,7 @@ export default class extends Controller {
           messages_list.scrollTop(messages_list.prop("scrollHeight"));
   }
   submit(e){
+
       console.log("connect to submit");
       console.log("i am form submit");
       e.preventDefault();

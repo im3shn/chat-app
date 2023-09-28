@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
+  mount ActionCable.server => '/cable'
   root to: "home#index"
   resources :conversations, only: [:create] do
     member do

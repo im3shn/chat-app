@@ -26,7 +26,6 @@ class MessageBroadcastJob < ApplicationJob
       conversation_id: message.conversation_id}
     )
   end
-
   def render_message(message, user)
     ApplicationController.render(
       partial: 'messages/message',

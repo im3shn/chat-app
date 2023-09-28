@@ -1,4 +1,5 @@
 var conversations = $('#conversations-list');
+console.log(conversations)
 var conversation = conversations.find("[data-conversation-id='" + "<%= @conversation.id %>" + "']");
 if (conversation.length !== 1) {
     conversations.prepend("<%= j(render 'conversations/conversation', conversation: @conversation, user: current_user) %>");
