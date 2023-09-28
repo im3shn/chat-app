@@ -3,14 +3,14 @@ class MessagesController < ApplicationController
     @conversation = Conversation.includes(:receiver).find(params[:conversation_id])
     @message = @conversation.messages.create(message_params)
 
-    respond_to do |format|
-      format.js
-    end
+    # respond_to do |format|
+    #   format.js
+    # end
   end
 
   private
 
   def message_params
-    params.require(:message).permit(:user_id, :body)
+    params.require(:message).permit(:user_id, :body, :conversation_id)
   end
 end

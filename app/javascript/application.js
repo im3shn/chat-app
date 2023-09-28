@@ -2,6 +2,8 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "./jquery"
-import "./jquery_ujs"
 import "./jquery_ui"
+import "./jquery_ujs"
 import "./bootstrap"
+import "channels"
+
