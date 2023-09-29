@@ -24,8 +24,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_113311) do
 
   create_table "messages", force: :cascade do |t|
     t.text "body"
-    t.integer "user_id", null: false
-    t.integer "conversation_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "conversation_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
@@ -40,13 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_113311) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
-    t.integer "failed_attempts", default: 0, null: false
-    t.string "unlock_token"
-    t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
