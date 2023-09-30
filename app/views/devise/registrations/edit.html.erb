@@ -1,5 +1,6 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
+<h3>You will receive a confirmation link to your given email if you change your email.<br>
+  Please confirm your new email using the link sent.</h3>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
