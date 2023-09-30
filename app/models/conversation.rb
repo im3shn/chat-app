@@ -26,6 +26,6 @@ class Conversation < ApplicationRecord
     Conversation.get(current_user.id,user.id).messages.where(user_id:current_user.id).count
   end
   def self.received_messages(user, current_user)
-    Conversation.get(1,5).messages.where(user_id:user.id).count
+    Conversation.get(current_user.id, user).messages.where(user_id:user.id).count
   end
 end

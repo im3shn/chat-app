@@ -23,7 +23,6 @@ class ConversationsController < ApplicationController
   def add_to_conversations
     session[:conversations] ||= []
     session[:conversations] << @conversation.id
-    request.referrer
   end
 
   def conversated?
