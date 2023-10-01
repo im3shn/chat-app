@@ -32,6 +32,7 @@
               </li>
               <% if search_email.present? %>
                 <ul>
+                  <li>Name: <%= User.full_name(user) %></li>
                   <li>Sent: <%=Conversation.sent_messages(user, current_user) %> </li>
                   <li>Received: <%=Conversation.received_messages(user, current_user) %> </li>
                 </ul>
