@@ -15,7 +15,9 @@ class User < ApplicationRecord
   validates :last_name, presence: :true
   def self.full_name(current_user="")
   	if current_user.present?
-	  current_user.first_name + " " + current_user.last_name
-	end
+	    current_user.first_name + " " + current_user.last_name
+    else
+      current_user.email
+	  end
   end
 end
