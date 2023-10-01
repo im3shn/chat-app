@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
+  # has_one_attached :avatar
+  has_one_attached :avatar, dependent: :destroy do |attachable|
+    attachable.variant :thumb, resize_to_limit: [50, 50]
+    attachable.variant :profile, resize_to_limit: [150, 150]
+  end
   has_many :messages, dependent: :destroy
   has_many :conversations, foreign_key: :sender_id
   validates :first_name, presence: :true

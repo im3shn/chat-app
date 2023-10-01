@@ -81,3 +81,5 @@ gem "jquery-ui-rails", "~> 6.0"
 gem "sassc-rails", "~> 2.1"
 
 gem "bootstrap-sass", "~> 3.4"
+
+gem 'image_processing', '~> 1.2'

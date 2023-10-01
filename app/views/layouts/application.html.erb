@@ -16,7 +16,8 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <div class="container">
     <%= render 'home/header', current_user: current_user %>
-    <%= yield %>
+    <%= yield %></div>
   </body>
 </html>
