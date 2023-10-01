@@ -27,7 +27,7 @@
                 <% else %>
                     <%= image_tag "default_profile.jpeg" ,"width":"70", "height":"70"%>
                   <% end %>
-                  <%= link_to user.email, conversations_path(user_id: user), remote: true, method: :post , class: 'user-id'%>
+                  <%= link_to User.full_name(user), conversations_path(user_id: user), remote: true, method: :post , class: 'user-id'%>
                 </div>
               </li>
               <% if search_email.present? %>
