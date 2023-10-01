@@ -20,7 +20,7 @@
             <%= form_for [conversation, conversation.messages.new],class: 'new_message_form', remote: true,data: { controller: "conversations", action: "conversations#submit" } do |f| %>
               <%= f.hidden_field :user_id, value: user.id %>
               <%= f.hidden_field :conversation_id, value: conversation.id %>
-              <%= f.text_area :body, class: "form-control", id: "chat-area" %>
+              <%= f.text_area :body, class: "form-control", id: "chat-area", placeholder: "Type your message..." %>
               <%= f.submit "Send", class: "btn btn-success", id:"submit-form" %>
             <% end %>
           </div>
