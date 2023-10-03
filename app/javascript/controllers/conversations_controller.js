@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import Conversations_controller from "./conversations_controller";
 window.conversationChannel = conversationChannel;
 // import conversationChannel from "../channels/conversation_channel"
 // Connects to data-controller="conversations"
@@ -21,9 +22,18 @@ export default class extends Controller {
       console.log("i am form submit");
       e.preventDefault();
       var values = $('.new_message_form').serializeArray();
+      console.log(values);
       conversationChannel.speak(values);
       console.log(conversationChannel);
       $(this).trigger('reset');
 
+  }
+
+  submit_by_enter(e){
+      console.log("submit by enter")
+      e.preventDefault();
+      let form_submit = $('#submit-form');
+      console.log(form_submit);
+      form_submit.click();
   }
 }

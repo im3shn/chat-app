@@ -16,6 +16,8 @@ const conversationChannel = consumer.subscriptions.create("ConversationChannel",
         },
 
         speak: function (message) {
+            console.log('speak');
+            console.log(message);
             return this.perform('speak', {
                 message: message
             });
@@ -27,6 +29,7 @@ window.conversationChannel = conversationChannel;
 let submit_messages;
 submit_messages = function (data) {
     var conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']");
+    console.log('conversation')
     conversation.find('.messages-list').find('ul').append(data['message']);
     console.log("logging the appender");
     conversation.find('textarea').val('');
