@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
     session[:conversations] ||= []
     if params[:search] && params[:search][:search_email].present?
-      @users = User.where("email LIKE ?", "%" + params[:search][:search_email] + "%")
+      @users = User.where("email LIKE ? and id != ?", "%" + params[:search][:search_email] + "%" , current_user.id)
     else
       @users = User.all.where.not(id: current_user)
     end
